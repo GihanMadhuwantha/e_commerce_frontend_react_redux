@@ -15,6 +15,7 @@ const initialState: ProductState = {
       price: 120,
       image: "/assets/Shoe_1.jpg",
       quantity: 0,
+      category: "running",
     },
     {
       id: "2",
@@ -24,6 +25,7 @@ const initialState: ProductState = {
       price: 100,
       image: "/assets/Shoe_2.jpg",
       quantity: 0,
+      category: "casual",
     },
     {
       id: "3",
@@ -33,6 +35,7 @@ const initialState: ProductState = {
       price: 130,
       image: "/assets/Shoe_3.jpg",
       quantity: 0,
+      category: "fashion",
     },
     {
       id: "4",
@@ -42,6 +45,7 @@ const initialState: ProductState = {
       price: 150,
       image: "/assets/Shoe_4.jpg",
       quantity: 0,
+      category: "running",
     },
     {
       id: "5",
@@ -51,6 +55,7 @@ const initialState: ProductState = {
       price: 110,
       image: "/assets/Shoe_5.jpg",
       quantity: 0,
+      category: "casual",
     },
     {
       id: "6",
@@ -60,9 +65,11 @@ const initialState: ProductState = {
       price: 125,
       image: "/assets/Shoe_6.jpg",
       quantity: 0,
+      category: "fashion",
     },
   ],
 };
+
 
 const productSlice = createSlice({
   name: "products",

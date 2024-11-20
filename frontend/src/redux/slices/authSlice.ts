@@ -12,10 +12,14 @@ interface AuthState {
   hashedPasswords: User[];
 }
 
+const storedUser = localStorage.getItem("authUser");
+const storedAuthState = localStorage.getItem("isAuthenticated");
+const storedPasswords = localStorage.getItem("hashedPasswords");
+
 const initialState: AuthState = {
-  isAuthenticated: false,
-  user: null,
-  hashedPasswords: [],
+  isAuthenticated: storedAuthState === "true",
+  user: storedUser ? JSON.parse(storedUser) : null,
+  hashedPasswords: storedPasswords ? JSON.parse(storedPasswords) : [],
 };
 
 const authSlice = createSlice({
@@ -23,15 +27,30 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     signUp: (state, action: PayloadAction<User>) => {
-      state.hashedPasswords.push(action.payload);
+      const existingUser = state.hashedPasswords.find(
+        (user) => user.email === action.payload.email
+      );
+      if (!existingUser) {
+        state.hashedPasswords.push(action.payload);
+        localStorage.setItem(
+          "hashedPasswords",
+          JSON.stringify(state.hashedPasswords)
+        );
+      } else {
+        throw new Error("Email is already registered.");
+      }
     },
     login: (state, action: PayloadAction<{ name: string; email: string }>) => {
       state.isAuthenticated = true;
       state.user = action.payload;
+      localStorage.setItem("authUser", JSON.stringify(action.payload));
+      localStorage.setItem("isAuthenticated", "true");
     },
     logout: (state) => {
       state.isAuthenticated = false;
       state.user = null;
+      localStorage.removeItem("authUser");
+      localStorage.setItem("isAuthenticated", "false");
     },
   },
 });
