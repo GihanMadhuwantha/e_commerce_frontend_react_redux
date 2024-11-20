@@ -1,5 +1,11 @@
 import React from "react";
-import { Box, Typography, IconButton, TextField, useTheme } from "@mui/material";
+import {
+  Box,
+  Typography,
+  IconButton,
+  TextField,
+  useTheme,
+} from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch } from "react-redux";
 import { CartItem as CartItemType } from "../../interfaces/Cart";
@@ -46,7 +52,11 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
           }}
         />
         <Box>
-          <Typography variant="h6" color={theme.palette.text.primary} fontWeight="bold">
+          <Typography
+            variant="h6"
+            color={theme.palette.text.primary}
+            fontWeight="bold"
+          >
             {item.name}
           </Typography>
           <Typography color={theme.palette.text.secondary}>
@@ -79,7 +89,10 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
             },
           }}
         />
-        <IconButton onClick={handleRemove} sx={{ color: theme.palette.error.main }}>
+        <IconButton
+          onClick={handleRemove}
+          sx={{ color: theme.palette.error.main }}
+        >
           <DeleteIcon />
         </IconButton>
       </Box>

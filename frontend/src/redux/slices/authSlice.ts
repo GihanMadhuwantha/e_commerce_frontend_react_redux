@@ -9,13 +9,13 @@ interface User {
 interface AuthState {
   isAuthenticated: boolean;
   user: { name: string; email: string } | null;
-  hashedPasswords: User[]; 
+  hashedPasswords: User[];
 }
 
 const initialState: AuthState = {
   isAuthenticated: false,
   user: null,
-  hashedPasswords: [], 
+  hashedPasswords: [],
 };
 
 const authSlice = createSlice({

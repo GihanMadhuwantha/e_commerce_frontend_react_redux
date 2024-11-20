@@ -5,7 +5,7 @@ const Products = () => (
   <Container
     maxWidth="lg"
     sx={{
-      paddingTop: { xs: "80px", md: "60px" }, 
+      paddingTop: { xs: "80px", md: "60px" },
     }}
   >
     <ProductList />
@@ -13,4 +13,3 @@ const Products = () => (
 );
 
 export default Products;
-

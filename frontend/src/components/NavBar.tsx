@@ -20,8 +20,7 @@ const NavBar = () => {
         width: { xs: "100%", md: "15%" },
         padding: "8px",
         zIndex: 1100,
-        paddingLeft:"8"
-        
+        paddingLeft: "8",
       }}
     >
       <AppBar
@@ -82,7 +81,9 @@ const NavBar = () => {
               }}
             >
               <Badge badgeContent={cartItemsCount} color="error">
-                <ShoppingCart sx={{ fontSize: { xs: "1.25rem", md: "1.5rem" } }} />
+                <ShoppingCart
+                  sx={{ fontSize: { xs: "1.25rem", md: "1.5rem" } }}
+                />
               </Badge>
             </IconButton>
             {isAuthenticated ? (
@@ -91,7 +92,7 @@ const NavBar = () => {
                   component="span"
                   sx={{
                     marginRight: 2,
-                    paddingLeft:2,
+                    paddingLeft: 2,
                     fontSize: { xs: "0.75rem", md: "1rem" },
                   }}
                 >

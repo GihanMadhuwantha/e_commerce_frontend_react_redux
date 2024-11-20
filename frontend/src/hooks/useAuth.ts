@@ -12,7 +12,7 @@ export const useAuth = () => {
   const { isAuthenticated, user, hashedPasswords } = useSelector(
     (state: RootState) => state.auth
   );
-    //dispatch details to the auth slice
+  //dispatch details to the auth slice
   const handleSignUp = (name: string, email: string, password: string) => {
     try {
       const salt = bcrypt.genSaltSync(10);
@@ -21,7 +21,10 @@ export const useAuth = () => {
       showToaster("Registration successful! Please log in.", "success");
       navigate("/login");
     } catch (error) {
-      showToaster("An error occurred during registration. Please try again.", "error");
+      showToaster(
+        "An error occurred during registration. Please try again.",
+        "error"
+      );
     }
   };
 

@@ -22,18 +22,25 @@ const RegisterForm = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const togglePasswordVisibility = () => setShowPassword((prev) => !prev);
-  const toggleConfirmPasswordVisibility = () => setShowConfirmPassword((prev) => !prev);
+  const toggleConfirmPasswordVisibility = () =>
+    setShowConfirmPassword((prev) => !prev);
 
   const RegisterSchema = Yup.object({
     name: Yup.string().required("Name is required"),
     email: Yup.string().email("Invalid email").required("Email is required"),
-    password: Yup.string().min(6, "Minimum 6 characters").required("Password is required"),
+    password: Yup.string()
+      .min(6, "Minimum 6 characters")
+      .required("Password is required"),
     confirmPassword: Yup.string()
       .oneOf([Yup.ref("password"), ""], "Passwords must match")
       .required("Confirm password is required"),
   });
 
-  const handleSubmit = (values: { name: string; email: string; password: string }) => {
+  const handleSubmit = (values: {
+    name: string;
+    email: string;
+    password: string;
+  }) => {
     handleSignUp(values.name, values.email, values.password);
   };
 
@@ -166,7 +173,9 @@ const RegisterForm = () => {
                   },
                 }}
               />
-              <FormHelperText>{touched.password && errors.password}</FormHelperText>
+              <FormHelperText>
+                {touched.password && errors.password}
+              </FormHelperText>
             </FormControl>
 
             <FormControl
@@ -214,7 +223,9 @@ const RegisterForm = () => {
                   },
                 }}
               />
-              <FormHelperText>{touched.confirmPassword && errors.confirmPassword}</FormHelperText>
+              <FormHelperText>
+                {touched.confirmPassword && errors.confirmPassword}
+              </FormHelperText>
             </FormControl>
 
             <Button

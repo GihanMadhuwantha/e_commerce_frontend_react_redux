@@ -5,7 +5,10 @@ import { RootState } from "../../redux/store";
 const CartSummary = () => {
   const theme = useTheme();
   const items = useSelector((state: RootState) => state.cart.items);
-  const totalPrice = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const totalPrice = items.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
 
   return (
     <Box
@@ -25,10 +28,7 @@ const CartSummary = () => {
       >
         Cart Summary
       </Typography>
-      <Typography
-        variant="body1"
-        color={theme.palette.text.secondary}
-      >
+      <Typography variant="body1" color={theme.palette.text.secondary}>
         Total Items: {items.reduce((sum, item) => sum + item.quantity, 0)}
       </Typography>
       <Typography

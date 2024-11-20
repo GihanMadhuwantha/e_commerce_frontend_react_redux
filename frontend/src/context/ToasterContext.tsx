@@ -5,9 +5,13 @@ interface ToasterContextProps {
   showToaster: (message: string, severity: AlertColor) => void;
 }
 
-const ToasterContext = createContext<ToasterContextProps | undefined>(undefined);
+const ToasterContext = createContext<ToasterContextProps | undefined>(
+  undefined
+);
 
-export const ToasterProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const ToasterProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const theme = useTheme();
 
   const [toaster, setToaster] = useState<{
@@ -41,7 +45,7 @@ export const ToasterProvider: React.FC<{ children: React.ReactNode }> = ({ child
             backgroundColor: theme.palette.background.paper,
             color: theme.palette.text.primary,
             border: `1px solid ${theme.palette.text.secondary}`,
-            borderRadius: "16px", 
+            borderRadius: "16px",
             boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.3)",
           },
         }}
@@ -55,7 +59,7 @@ export const ToasterProvider: React.FC<{ children: React.ReactNode }> = ({ child
             color: theme.palette.text.primary,
             fontSize: "0.875rem",
             fontWeight: 500,
-            borderRadius: "16px", 
+            borderRadius: "16px",
             border: `1px solid ${theme.palette.text.secondary}`,
             boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.2)",
           }}

@@ -1,8 +1,19 @@
 import React from "react";
-import { Card, CardMedia, CardContent, Typography, Button, Box } from "@mui/material";
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  Button,
+  Box,
+} from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { addItem, incrementQuantity, decrementQuantity } from "../../redux/slices/cartSlice";
+import {
+  addItem,
+  incrementQuantity,
+  decrementQuantity,
+} from "../../redux/slices/cartSlice";
 import { Product } from "../../interfaces/Product";
 
 interface ProductCardProps {
@@ -19,7 +30,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   const handleIncrement = () => {
     if (!cartItem) {
-      dispatch(addItem({ id: product.id, name: product.name, price: product.price, quantity: 1, image: product.image, }));
+      dispatch(
+        addItem({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          quantity: 1,
+          image: product.image,
+        })
+      );
     } else {
       dispatch(incrementQuantity(product.id));
     }
@@ -32,7 +51,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   };
 
   return (
-    <Card sx={{ maxWidth: 300, margin: "0 auto", boxShadow: 3, borderRadius: 2 }}>
+    <Card
+      sx={{ maxWidth: 300, margin: "0 auto", boxShadow: 3, borderRadius: 2 }}
+    >
       <CardMedia
         component="img"
         image={product.image}
@@ -40,17 +61,26 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         sx={{
           height: 200,
           objectFit: "cover",
-          objectPosition: "bottom", 
+          objectPosition: "bottom",
         }}
       />
       <CardContent sx={{ textAlign: "center" }}>
         <Typography variant="h6" fontWeight="bold">
           {product.name}
         </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ margin: "8px 0" }}>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          sx={{ margin: "8px 0" }}
+        >
           {product.description}
         </Typography>
-        <Typography variant="h5" fontWeight="bold" color="primary" sx={{ marginBottom: 2 }}>
+        <Typography
+          variant="h5"
+          fontWeight="bold"
+          color="primary"
+          sx={{ marginBottom: 2 }}
+        >
           ${product.price.toFixed(2)}
         </Typography>
         <Box display="flex" justifyContent="center" alignItems="center" gap={1}>

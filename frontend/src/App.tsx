@@ -1,5 +1,3 @@
-
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Products from "./pages/Products";
@@ -12,7 +10,7 @@ import Logo from "./components/logo";
 const App = () => (
   <ToasterProvider>
     <BrowserRouter>
-    <Logo></Logo>
+      <Logo></Logo>
       <NavBar />
       <Routes>
         <Route path="/" element={<Products />} />
@@ -25,5 +23,3 @@ const App = () => (
 );
 
 export default App;
-
-

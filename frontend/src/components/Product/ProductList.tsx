@@ -1,5 +1,4 @@
-
-import Grid from "@mui/material/Grid2"; 
+import Grid from "@mui/material/Grid2";
 import ProductCard from "./ProductCard";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
@@ -19,6 +18,3 @@ const ProductList = () => {
 };
 
 export default ProductList;
-
-
-
