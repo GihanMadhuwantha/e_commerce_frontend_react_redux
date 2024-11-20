@@ -21,9 +21,32 @@ This project is a responsive web application for an online shoe store that allow
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repository-url.git
-   cd your-repository-folder
-Install dependencies:npm install
+   git clone https://github.com/e_commerce_frontend_react_redux.git
+
+   cd frontend
+2. Install dependencies:
+   ```bash
+   npm install
+3. Start the development server:
+   ```bash
+   npm start
+## Design Decisions
+
+   - **Material-UI**: Chosen for its comprehensive and responsive components that simplify UI development.
+   - **Redux Toolkit**: Used for managing application state efficiently and with minimal boilerplate.
+   - **Password Hashing**: Implemented using bcryptjs to ensure secure storage of user credentials.
+   
+## Special Features
+
+   - **Price Filtering**: Includes pre-defined price ranges and dynamically filters the product list.
+   - **Category Filter**: Categories like Running, Casual, Basketball, and Fashion for easy product discovery.
+   - **Responsive Product Cards**: Cards adjust dynamically based on screen size to ensure proper alignment.
+
+
+
+ 
+
+
 
 
 
