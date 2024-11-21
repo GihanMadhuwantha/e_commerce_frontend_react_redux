@@ -21,7 +21,7 @@ This project is a responsive web application for an online shoe store that allow
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/e_commerce_frontend_react_redux.git
+   git clone https://github.com/GihanMadhuwantha/e_commerce_frontend_react_redux.git
 
    cd frontend
 2. Install dependencies:
