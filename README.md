@@ -29,7 +29,7 @@ This project is a responsive web application for an online shoe store that allow
    npm install
 3. Start the development server:
    ```bash
-   npm start
+   npm run dev
 ## Design Decisions
 
    - **Material-UI**: Chosen for its comprehensive and responsive components that simplify UI development.
